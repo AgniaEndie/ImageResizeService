@@ -10,6 +10,7 @@ def get_image(id):
 
 @app.route('/resize/<id>')
 def resize_image(id):
+    #test
     return get_image(id)
 
 
