@@ -1,14 +1,11 @@
 import requests
 from flask import *
-import cv2
 
 app = Flask(__name__)
 
 
 def get_image(id):
-    localCamera = cv2.VideoCapture(f"http://stream-to-image-service/camera/{id}")
-    success, frame = localCamera.read()
-    return Response(frame, mimetype='multipart/x-mixed-replace; boundary=frame')
+    return redirect(f"http://stream-to-image-service/camera/{id}",code=302)
 
 
 @app.route('/resize/<id>')
