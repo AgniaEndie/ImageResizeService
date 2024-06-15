@@ -14,4 +14,4 @@ def resize_image(id):
     return get_image(id)
 
 
-app.run("0.0.0.0", host=8080, debug=True)
+app.run("0.0.0.0", port=8080, debug=True)
