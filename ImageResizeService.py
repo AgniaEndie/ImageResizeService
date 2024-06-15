@@ -1,0 +1,16 @@
+import requests
+from flask import *
+
+app = Flask(__name__)
+
+
+def get_image(id):
+    return requests.get(f"http://stream-to-image-service/camera/{id}")
+
+
+@app.route('/resize/<id>')
+def resize_image(id):
+    return get_image(id)
+
+
+app.run("0.0.0.0", host=8080, debug=True)
