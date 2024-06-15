@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 def get_image(id):
-    return requests.get(f"http://stream-to-image/camera/{id}")
+    return requests.get(f"http://stream-to-image-service/camera/{id}")
 
 
 @app.route('/resize/<id>')
